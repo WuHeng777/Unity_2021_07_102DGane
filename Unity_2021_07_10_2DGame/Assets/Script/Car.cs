@@ -101,7 +101,24 @@ public class Car : MonoBehaviour
     private void Start()
     {
         // (翻譯 : 列印) 輸出(任何類型資料); 到Unity = print 
-        print("哈囉.沃德:p");    
+        print("哈囉.沃德:p");
+        #region 練習欄位
+
+        //呼叫方法語法 : 方法名稱();
+        Drive50();
+        Drive100();
+        Drive(150, "咻咻咻");       // 呼叫時小括號內的稱為引數
+        Drive(200, "轟轟轟");
+        Drive(300);                // 有預設值的參數可以不用給引數
+        //Drive(82, "碎石");       // 時速 80。音效 咻咻咻。特效 碎石
+        Drive(80, effect: "碎石"); // 使用多個預設值參數時可以使用 參數名稱: 值
+        Drive(999, "咚咚咚", "爆炸");
+
+        float kg = KG();           // 區域變數。僅在此括號內使用
+        print("轉為公斤的資訊 :" + kg);
+
+        print("H 的 BMI:" + BMI(55, 1.66f)); //直接將傳回方法當成值使用
+        #endregion
     }
 
     // 更新事件 : 大約一秒 60 次 . 60FPS . 處理物件移動或者監聽玩家輸入
@@ -115,7 +132,65 @@ public class Car : MonoBehaviour
         windowSky = true;
         cc = 5000;
         weight = 9.9f;
+
     }
     #endregion
+
+    #region 方法 (功能、函式) Method
+    // 方法 : 實作比較複雜的行為，例如 : 汽車往前開、開啟汽車的音響並撥放音樂..
+    // 欄位語法 : 修飾詞 類   型 名稱 指定 預設值 ；
+    // 方法語法 : 修飾詞 傳回類型  名稱 (...) { 程式區塊 }
+    // 類型 : void - 無傳回
+    // 定義方法，不會執行的必須(呼叫)，呼叫的方式 : 在事件內呼叫此方法
+    // 維護性、擴充性
+
+    private void Drive50()
+    {
+        print("開車中 . 時速 : 50");
+    }
+   
+    private void Drive100()
+    {
+        print("開車中 . 時速 : 100");
+    }
+    // 參考語法 : 類型 參數名稱 - 寫在小括號內
+    // 參數1、參數2、參數3.........參數N
+    // 參數預設值 : 類型 參數名稱 制定 值
+    // 預設值只能放在最右邊
+
+    /// <summary>
+    /// 這是開車的方法。可以用來控制車子的速度、音效與特效
+    /// </summary>
+    /// <param name="speed">車子的移動速度</param>
+    /// <param name="sound">開車時的音效</param>
+    /// <param name="effect">開車時要撥放的特效</param>
+    private void Drive(int speed, string sound = "咻咻咻", string effect = "灰塵")
+    {
+        print("開車中。時速 : " + speed);
+        print("開車音效 : " + sound);
+        print("開車音效 : " + effect);
+    }
+
+    /// <summary>
+    /// 噸位轉換為公斤
+    /// </summary>
+    /// <returns>轉為公斤的重量資訊</returns>
+    private float KG()
+    {
+        return weight * 1000;
+    }
+
+    /// <summary>
+    /// 計算 BMI
+    /// </summary>
+    /// <param name="weight">體重(公斤)</param>
+    /// <param name="height">身高(公尺)</param>
+    /// <returns></returns>
+    private float BMI(float weight, float height)
+    {
+        return weight / (height * height);
+    }
+    #endregion
+
 
 }
