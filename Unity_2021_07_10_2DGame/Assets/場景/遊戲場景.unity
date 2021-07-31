@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.013290416, g: 0.016052205, b: 0.1127319, a: 1}
+  m_IndirectSpecularColor: {r: 0.36962873, g: 0.46459985, b: 0.5258792, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5417,6 +5417,7 @@ GameObject:
   - component: {fileID: 1660342181}
   - component: {fileID: 1660342184}
   - component: {fileID: 1660342185}
+  - component: {fileID: 1660342186}
   m_Layer: 0
   m_Name: "\u4E3B\u89D2"
   m_TagString: Untagged
@@ -5502,7 +5503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660342180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.98, y: -3.11, z: 0}
+  m_LocalPosition: {x: -10.69, y: -2.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5545,6 +5546,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.016526699, y: -1.5589268}
   m_Size: {x: 0.6612005, y: 1.6560678}
   m_Direction: 0
+--- !u!114 &1660342186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660342180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4906d77f452b4c80dd1f50cf2a8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jump: 3000
+  hp: 100
+  isGround: 0
+  gravity: 0.1
 --- !u!1 &1780848019 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4965686160898683471, guid: f4797aa569df63746b3dc5b73ce5f5ea, type: 3}
